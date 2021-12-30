@@ -15,8 +15,8 @@ export class InifitPlayerComponent implements OnInit, AfterViewInit {
   title = 'Player';
   @ViewChild('music') music: ElementRef<HTMLMediaElement>;
 
-  currentTime: number = 0;
-  musicTime: number = 0;
+  currentTime: number;
+  musicTime: number;
 
   endTime: number;
   startTime = 0;
