@@ -18,8 +18,8 @@ export class InifitPlayerComponent implements OnInit, AfterViewInit {
   currentTime: number = 0;
   musicTime: number = 0;
 
-  endTime = 30;
-  startTime = 20;
+  endTime: number;
+  startTime = 0;
   metadataLoaded = false;
   private intervalNumber!: NodeJS.Timeout;
 
@@ -27,6 +27,7 @@ export class InifitPlayerComponent implements OnInit, AfterViewInit {
     this.music.nativeElement.currentTime = this.startTime;
     this.music.nativeElement.addEventListener('loadedmetadata', () => {
       this.musicTime = this.music.nativeElement.duration;
+      this.endTime = this.music.nativeElement.duration;
       this.metadataLoaded = true;
     });
   }
