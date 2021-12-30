@@ -1,0 +1,17 @@
+<div
+  #fullRange
+  class="fullRange"
+  (drop)="onDrop($event)"
+  (dragover)="allowDrop($event)"
+>
+  <boundary
+    [boundaryId]="BOUNDARY_START"
+    style="margin-left: {{ startBoundary }}%"></boundary>
+  <div
+    class="playRange"
+    style="width: {{ endBoundary }}%"
+  ></div>
+  <boundary
+    [boundaryId]="BOUNDARY_END"
+  ></boundary>
+</div>

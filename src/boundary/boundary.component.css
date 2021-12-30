@@ -1,0 +1,6 @@
+div {
+  cursor: ew-resize;
+  background-color: white;
+  width: 3px;
+  height: 100%;
+}

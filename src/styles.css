@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*
+  TODO move it to Angular
+  https://medium.com/@amcdnl/theming-angular-with-css-variables-3c78a5b20b24
+*/
+:root {
+  --main-dark: #000;
+  --main-white: #fff;
+}
+
+html,
+body {
+  font-family: sans-serif;
+  background-color: var(--main-dark);
+}
+
+p,
+span,
+h1 {
+  color: var(--main-white) !important;
+}
+
+input {
+  color: var(--main-dark);
+}

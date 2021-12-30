@@ -1,0 +1,11 @@
+.fullRange {
+  display: flex;
+  background-color: burlywood;
+  height: 25px;
+  margin: 0 4px;
+}
+
+.playRange {
+  background-color: red;
+  height: 100%;
+}
