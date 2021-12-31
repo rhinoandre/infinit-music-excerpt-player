@@ -39,7 +39,6 @@ export class MusicBoundariesComponent implements OnChanges {
   }
 
   onDrop(event: DragEvent) {
-    // console.log('drop', event);
     event.preventDefault();
     const boundarySide = event.dataTransfer?.getData('text');
 

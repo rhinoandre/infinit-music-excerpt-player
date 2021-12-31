@@ -56,13 +56,11 @@ export class InifitPlayerComponent implements OnInit, AfterViewInit {
   }
 
   onStartBoundaryChange(event: number) {
-    console.log('start', event);
     this.startTime = event;
     this.currentTime = event;
   }
 
   onEndBoundaryChange(event: number) {
-    console.log('end', event);
     this.endTime = event;
   }
 }
