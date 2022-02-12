@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+
 @Component({
-  selector: 'inifit-player',
-  templateUrl: './inifit-player.component.html',
-  styleUrls: ['./inifit-player.component.css']
+  selector: 'infinite-player',
+  templateUrl: './infinite-player.component.html',
+  styleUrls: ['./infinite-player.component.css']
 })
-export class InifitPlayerComponent implements AfterViewInit {
+export class InfinitePlayerComponent implements AfterViewInit {
   title = 'Player';
   @ViewChild('music') music: ElementRef<HTMLMediaElement>;
 
