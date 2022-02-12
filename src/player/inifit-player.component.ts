@@ -1,30 +1,22 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  OnInit,
-  ViewChild
-} from '@angular/core';
-
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 @Component({
   selector: 'inifit-player',
   templateUrl: './inifit-player.component.html',
   styleUrls: ['./inifit-player.component.css']
 })
-export class InifitPlayerComponent implements OnInit, AfterViewInit {
+export class InifitPlayerComponent implements AfterViewInit {
   title = 'Player';
   @ViewChild('music') music: ElementRef<HTMLMediaElement>;
 
-  currentTime: number;
+  currentTime: number = 0;
   musicTime: number;
 
   endTime: number;
-  startTime = 0;
+  startTime: number = 0;
   metadataLoaded = false;
   private intervalNumber!: NodeJS.Timeout;
 
   ngAfterViewInit(): void {
-    this.music.nativeElement.currentTime = this.startTime;
     this.music.nativeElement.addEventListener('loadedmetadata', () => {
       this.musicTime = this.music.nativeElement.duration;
       this.endTime = this.music.nativeElement.duration;
@@ -32,13 +24,9 @@ export class InifitPlayerComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngOnInit() {
-    this.currentTime = this.startTime;
-  }
-
   detectEndOfPlayTime = () => {
     if (this.currentTime >= this.endTime) {
-      this.music.nativeElement.currentTime = this.startTime;
+      this.setMusicCurrentTime(this.startTime);
       this.currentTime = this.startTime;
     } else {
       this.currentTime = this.music.nativeElement.currentTime;
@@ -55,12 +43,17 @@ export class InifitPlayerComponent implements OnInit, AfterViewInit {
     clearInterval(this.intervalNumber);
   }
 
+  private setMusicCurrentTime(newCurrentTime: number) {
+    this.music.nativeElement.currentTime = newCurrentTime;
+  }
+
   onStartBoundaryChange(event: number) {
-    this.startTime = event;
-    this.currentTime = event;
+    this.startTime += event;
+    this.setMusicCurrentTime(this.startTime);
+    this.currentTime += event;
   }
 
   onEndBoundaryChange(event: number) {
-    this.endTime = event;
+    this.endTime += event;
   }
 }

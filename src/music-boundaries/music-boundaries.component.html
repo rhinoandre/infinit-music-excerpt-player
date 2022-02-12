@@ -1,17 +1,17 @@
 <div
   #fullRange
   class="fullRange"
-  (drop)="onDrop($event)"
-  (dragover)="allowDrop($event)"
 >
   <boundary
     [boundaryId]="BOUNDARY_START"
-    style="margin-left: {{ startBoundary }}%"></boundary>
+    style="margin-left: {{ startBoundary }}%"
+    [onMouseMove]="onMouseMove"></boundary>
   <div
     class="playRange"
     style="width: {{ endBoundary }}%"
   ></div>
   <boundary
     [boundaryId]="BOUNDARY_END"
+    [onMouseMove]="onMouseMove"
   ></boundary>
 </div>
