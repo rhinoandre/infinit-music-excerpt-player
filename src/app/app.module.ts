@@ -7,8 +7,6 @@ import { InfinitePlayerModule } from 'src/player/infinite-player.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, InfinitePlayerModule],
-  exports: [],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
