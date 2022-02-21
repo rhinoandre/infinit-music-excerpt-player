@@ -3,10 +3,6 @@
     src="https://res.cloudinary.com/cbanlawi/video/upload/v1614140796/HarryStyles-WatermelonSugar_f5471p.mp3"
     #music
   ></audio>
-  <button class="play" (click)="onPlay()" [disabled]="!metadataLoaded">
-    Play
-  </button>
-  <button class="stop" (click)="onStop()">Stop</button>
   <br />
   <input [(ngModel)]="currentTime" #ctrl="ngModel" required />
   <input [(ngModel)]="endTime" #ctrl="ngModel" required />
@@ -22,4 +18,8 @@
     [max]="musicTime"
     [(value)]="currentTime"
   ></progress-bar>
+  <app-button class="primary" (click)="onPlay()" [disabled]="!metadataLoaded">
+    Play
+  </app-button>
+  <app-button class="secondary" (click)="onStop()">Stop</app-button>
 </div>
