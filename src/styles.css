@@ -5,14 +5,51 @@
   https://medium.com/@amcdnl/theming-angular-with-css-variables-3c78a5b20b24
 */
 :root {
-  --main-dark: #000;
-  --main-white: #fff;
+  /* Primary colors */
+  --orange-1: #f7931e;
+  --orange-1-light: #ffa236;
+  --orange-1-dark: #e37d07;
+
+  --orange-2: #fcbd38;
+  --orange-2-light: #ffce52;
+  --orange-2-dark: #edac24;
+
+  --white-1: #faf8f5;
+  --white-2: #f2efeb;
+  --white-3: #ebe7e1;
+
+  --black-1: #111111;
+  --black-2: #1a1a1a;
+  --black-3: #303030;
+
+  /* Secondary colors */
+  --gray-1: #404040;
+  --gray-2: #505050;
+  --gray-3: #606060;
+  --gray-4: #707070;
+  --gray-5: #808080;
+  --gray-6: #909090;
+  --gray-7: #a0a0a0;
+  --gray-8: #b0b0b0;
+
+  --red: #ff7171;
+  --green: #32d99a;
+
+  --main: var(--black-1);
+  --title: var(--orange-2)
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main: var(--white-2);
+    --title: var(--orange-2-dark)
+  }
 }
 
 html,
 body {
   font-family: sans-serif;
-  background-color: var(--main-dark);
+  background-color: var(--main);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -20,9 +57,9 @@ body {
 p,
 span,
 h1 {
-  color: var(--main-white) !important;
+  color: var(--title) !important;
 }
 
 input {
-  color: var(--main-dark);
+  color: var(--main);
 }
