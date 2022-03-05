@@ -36,13 +36,15 @@
   --green: #32d99a;
 
   --main: var(--black-1);
-  --title: var(--orange-2)
+  --title: var(--orange-2);
+  --input-color: var(--gray-8);
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --main: var(--white-2);
-    --title: var(--orange-2-dark)
+    --title: var(--orange-2-dark);
+    --input-color: var(--gray-1);
   }
 }
 
@@ -61,5 +63,6 @@ h1 {
 }
 
 input {
-  color: var(--main);
+  background-color: var(--main);
+  color: var(--input-color)
 }
