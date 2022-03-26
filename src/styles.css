@@ -49,6 +49,7 @@
     --main: var(--white-2);
     --title: var(--orange-2-dark);
     --input-color: var(--gray-1);
+    --body: var(--black-3);
   }
 }
 
@@ -57,7 +58,7 @@ body {
   font-family: 'Mukta', sans-serif;
   background-color: var(--main);
   color: var(--body);
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
