@@ -7,6 +7,12 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url('https://fonts.googleapis.com/css?family=Mukta');
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   /* Primary colors */
   --orange-1: #f7931e;
@@ -38,6 +44,8 @@
   --red: #ff7171;
   --green: #32d99a;
 
+  --width: 1000px;
+
   --main: var(--black-1);
   --title: var(--orange-2);
   --input-color: var(--gray-8);
@@ -58,8 +66,8 @@ body {
   font-family: 'Mukta', sans-serif;
   background-color: var(--main);
   color: var(--body);
-  max-width: 1000px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -71,4 +79,23 @@ h1 {
 input {
   background-color: var(--main);
   color: var(--input-color);
+}
+
+button {
+  background-color: var(--orange-2);
+  border: 2px solid var(--orange-2);
+  width: 54px;
+  height: 54px;
+  border-radius: 27px;
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--body);
+}
+
+button:hover {
+  background-color: var(--orange-2);
+  box-shadow: 0px 3px 21px 3px rgba(252, 189, 56, 0.25);
+  color: var(--black-1);
 }
